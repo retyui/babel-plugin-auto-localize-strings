@@ -1,0 +1,236 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`2 levels of nested jsx elements 1`] = `
+"import { fbt } from \\"fbt\\";
+<div>
+  <fbt desc=\\"description\\">
+    text
+    <level1>
+      <level2>222</level2>
+    </level1>
+  </fbt>
+</div>;
+"
+`;
+
+exports[`3 levels of nested jsx elements 1`] = `
+"import { fbt } from \\"fbt\\";
+<div>
+  <fbt desc=\\"description\\">
+    text
+    <level1>
+      <level2>
+        <level3>333</level3>
+      </level2>
+    </level1>
+  </fbt>
+</div>;
+"
+`;
+
+exports[`4 levels of nested jsx elements 1`] = `
+"import { fbt } from \\"fbt\\";
+<div>
+  <fbt desc=\\"description\\">
+    text
+    <level1>
+      <level2>
+        <level3>
+          <level4>444</level4>
+        </level3>
+      </level2>
+    </level1>
+  </fbt>
+</div>;
+"
+`;
+
+exports[`add jsx wrapper on same deep level 1`] = `
+"import { fbt } from \\"fbt\\";
+<>
+  <div>
+    <div>
+      <span>
+        <fbt desc=\\"description\\">
+          <a>
+            <fbt desc=\\"description\\">1 link</fbt>
+          </a>{\\" \\"}
+          from friends 1
+        </fbt>
+      </span>
+    </div>
+  </div>
+  <div>
+    <div>
+      <span>
+        <fbt desc=\\"description\\">
+          2 from friends <a>2 link</a>
+        </fbt>
+      </span>
+    </div>
+  </div>
+</>;
+"
+`;
+
+exports[`auto parametrization on end 1`] = `
+"import { fbt } from \\"fbt\\";
+<span>
+  <fbt desc=\\"description\\">
+    text <a>end</a>
+  </fbt>
+</span>;
+"
+`;
+
+exports[`auto parametrization on start 1`] = `
+"import { fbt } from \\"fbt\\";
+<span>
+  <fbt desc=\\"description\\">
+    <a>
+      <fbt desc=\\"description\\">start</fbt>
+    </a>{\\" \\"}
+    text
+  </fbt>
+</span>;
+"
+`;
+
+exports[`ignore empty jsx text 1`] = `
+"<div>
+  <div />
+</div>;
+"
+`;
+
+exports[`import and require ignore 1`] = `
+"import { fbt } from \\"fbt\\";
+import module1 from \\"moduleName1\\";
+
+const module2 = require(\\"moduleName2\\");
+
+function test1(a) {
+  function test2(b) {
+    function test3(c) {
+      return (
+        <div>
+          <fbt desc=\\"description\\">
+            text {a} {b} {c}
+          </fbt>
+        </div>
+      );
+    }
+  }
+}
+"
+`;
+
+exports[`jsx attributes 1`] = `
+"import { fbt } from \\"fbt\\";
+<input title={fbt(\\"need to translate\\", \\"description\\")} className=\\"ignore\\" />;
+"
+`;
+
+exports[`jsx simple text 1`] = `
+"import { fbt } from \\"fbt\\";
+<span>
+  <fbt desc=\\"description\\">Text</fbt>
+</span>;
+<span>{<fbt desc=\\"description\\">Text</fbt>}</span>;
+<span>{<fbt desc=\\"description\\">Text</fbt>}</span>;
+<span>{<fbt desc=\\"description\\">Text</fbt>}</span>;
+"
+`;
+
+exports[`jsx with custom description 1`] = `
+"import { fbt } from \\"fbt\\";
+<span>
+  <fbt desc=\\"my desc\\">Text</fbt>
+</span>;
+"
+`;
+
+exports[`jsx with params 1`] = `
+"import { fbt } from \\"fbt\\";
+<span>
+  <fbt desc=\\"description\\">Hi, {person.getName()}</fbt>
+</span>;
+"
+`;
+
+exports[`literal variable 1`] = `
+"import { fbt } from \\"fbt\\";
+const test = fbt(\\"text\\", \\"description\\");
+"
+`;
+
+exports[`literal variable if needed 1`] = `
+"import { fbt } from \\"fbt\\";
+const test = fbt(\\"text\\", \\"description\\");
+const test2 = fbt(\\"text2\\", \\"my description\\");
+"
+`;
+
+exports[`literal variable with custom description 1`] = `
+"import { fbt } from \\"fbt\\";
+const test = fbt(\\"text\\", \\"my desc\\");
+"
+`;
+
+exports[`object property 1`] = `
+"import { fbt } from \\"fbt\\";
+const test = {
+  prop: fbt(\\"test\\", \\"description\\"),
+};
+"
+`;
+
+exports[`prevent transform fbt options 1`] = `
+"const test2 = fbt(\\"text2\\", \\"my description\\", {
+  project: \\"foo\\",
+});
+"
+`;
+
+exports[`real world example 1`] = `
+"import { fbt } from \\"fbt\\";
+<main>
+  <div>
+    <div>
+      <h1>
+        <fbt desc=\\"description\\">Sign in to GitHub</fbt>
+      </h1>
+    </div>
+    <div>
+      <form>
+        <label>
+          <fbt desc=\\"description\\">Username or email address</fbt>
+        </label>
+        <input name={fbt(\\"login\\", \\"description\\")} />
+        <div>
+          <label>
+            <fbt desc=\\"description\\">Password</fbt>
+          </label>
+          <input name={fbt(\\"password\\", \\"description\\")} />
+          <input
+            type={fbt(\\"submit\\", \\"description\\")}
+            name={fbt(\\"commit\\", \\"description\\")}
+          />
+          <div>
+            <fbt desc=\\"description\\">
+              Don't remember password? <a>restore</a>
+            </fbt>
+          </div>
+        </div>
+      </form>
+    </div>
+    <p>
+      <fbt desc=\\"description\\">
+        New to GitHub?
+        <a>Create an account</a>.
+      </fbt>
+    </p>
+  </div>
+</main>;
+"
+`;
